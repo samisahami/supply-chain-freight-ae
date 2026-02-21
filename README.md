@@ -1,14 +1,16 @@
-# Supply Chain Freight Analytics Engineering Pipeline
+# Supply Chain Freight Analytics Engineering Project
 
-This project simulates a manufacturing sourcing and freight analytics environment.
+A Snowflake + dbt analytics engineering project modeling multi-currency freight invoices into clean, tested, analytics-ready data marts.
 
-## Goals
+## Project Goal
 
-- Recreate freight spend reporting similar to ERP-driven Power BI dashboards
-- Build dimensional models in Snowflake using dbt
-- Implement CI with dbt build on PR
-- Deliver Power BI dashboards on top of clean marts
+This project simulates a real-world freight spend analytics pipeline:
 
-## Architecture (Planned)
+- Raw freight invoices (multiple currencies)
+- Monthly FX rate normalization
+- Clean staging layer
+- Business-logic intermediate layer
+- Aggregated fact table for reporting
+- Data quality tests
 
-Raw CSV → Snowflake → dbt (staging → marts) → Power BI
+The end result is a production-style `fct_freight_spend_monthly` mart suitable for BI tools like Power BI or Looker.
