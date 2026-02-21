@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: SC_AE_DB
+    schema: RAW
+    tables:
+      - name: freight_invoices
+      - name: fx_rates_monthly

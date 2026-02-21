@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fct_freight_spend_monthly
+    description: "Monthly aggregated freight spend fact table"
+
+    columns:
+      - name: invoice_month
+        tests:
+          - not_null
+
+      - name: gl_location
+        tests:
+          - not_null
+
+      - name: inbound_outbound
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['INBOUND', 'OUTBOUND']
+
+      - name: freight_spend_usd
+        tests:
+          - not_null

@@ -1,0 +1,56 @@
+[0m16:46:54.092510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF644290F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF666BBCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF666BBAF0>]}
+
+
+============================== 16:46:54.108182 | 9a500428-b045-43db-9e7b-6910b6bc5ee8 ==============================
+[0m16:46:54.108182 [info ] [MainThread]: Running with dbt=1.11.5
+[0m16:46:54.109496 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\samis\\.dbt', 'invocation_command': 'dbt init sc_freight_ae', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m16:46:54.168453 [debug] [MainThread]: Starter project path: C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\include\starter_project
+[0m16:46:54.305349 [info ] [MainThread]: 
+Your new dbt project "sc_freight_ae" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:46:54.305349 [info ] [MainThread]: Setting up your profile.
+[0m16:47:00.338658 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m16:47:00.341604 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m16:47:00.341604 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m16:50:22.032577 [error] [MainThread]: Encountered an error:
+
+[0m16:50:22.098059 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\samis\supply-chain-freight-ae\.venv\lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m16:50:22.124673 [debug] [MainThread]: Command `dbt init` failed at 16:50:22.124673 after 208.27 seconds
+[0m16:50:22.130946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF644290F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF66661AB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF666614B0>]}
+[0m16:50:22.139418 [debug] [MainThread]: Flushing usage events
+[0m16:50:22.617019 [debug] [MainThread]: An error was encountered while trying to flush usage events

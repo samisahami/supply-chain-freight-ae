@@ -1,0 +1,4 @@
+﻿.venv/
+dbt/sc_freight_ae/logs/
+dbt/sc_freight_ae/target/
+dbt/sc_freight_ae/dbt_packages/
