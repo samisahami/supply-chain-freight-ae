@@ -14,3 +14,9 @@ This project simulates a real-world freight spend analytics pipeline:
 - Data quality tests
 
 The end result is a production-style `fct_freight_spend_monthly` mart suitable for BI tools like Power BI or Looker.
+
+## Lineage Graph
+
+Below is the dbt lineage graph showing the full transformation flow from raw sources to final analytics mart.
+
+![dbt Lineage Graph](docs/lineage_graph.png)
