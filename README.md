@@ -1,5 +1,7 @@
 # Supply Chain Freight Analytics Engineering Project
 
+![CI Status](https://github.com/samisahami/supply-chain-freight-ae/actions/workflows/dbt-ci.yml/badge.svg)
+
 A Snowflake + dbt analytics engineering project modeling multi-currency freight invoices into clean, tested, analytics-ready data marts.
 
 ## Project Goal
