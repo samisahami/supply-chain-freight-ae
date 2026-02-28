@@ -24,9 +24,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-core dbt-snowflake
 
-      - name: Create dbt profiles.yml from secrets
+      - name: Create dbt profiles.yml from secrets (key auth)
         run: |
           mkdir -p ~/.dbt
+          echo "$SNOWFLAKE_PRIVATE_KEY_B64" | base64 -d > ~/.dbt/snowflake_key.p8
+          chmod 600 ~/.dbt/snowflake_key.p8
+
           cat > ~/.dbt/profiles.yml << EOF
           sc_freight_ae:
             target: dev
@@ -35,22 +38,21 @@ jobs:
                 type: snowflake
                 account: ${SNOWFLAKE_ACCOUNT}
                 user: ${SNOWFLAKE_USER}
-                password: ${SNOWFLAKE_PASSWORD}
                 role: ${SNOWFLAKE_ROLE}
                 warehouse: ${SNOWFLAKE_WAREHOUSE}
                 database: ${SNOWFLAKE_DATABASE}
                 schema: ${SNOWFLAKE_SCHEMA}
-                authenticator: snowflake
+                private_key_path: /home/runner/.dbt/snowflake_key.p8
                 threads: 4
           EOF
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_PRIVATE_KEY_B64: ${{ secrets.SNOWFLAKE_PRIVATE_KEY_B64 }}
 
       - name: Debug profile
         run: cat ~/.dbt/profiles.yml
