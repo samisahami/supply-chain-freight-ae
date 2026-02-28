@@ -68,3 +68,7 @@ jobs:
       - name: dbt build
         working-directory: dbt/sc_freight_ae
         run: dbt build
+
+      - name: dbt test
+        working-directory: dbt/sc_freight_ae
+        run: dbt test
