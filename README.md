@@ -47,3 +47,18 @@ This project includes GitHub Actions CI that automatically runs:
 On every push to main.
 
 This ensures the data pipeline remains production-safe and reproducible.
+
+## 📊 Power BI Executive Dashboard
+
+The analytics mart (`fct_freight_spend_monthly`) is exposed to Power BI for executive reporting.
+
+Key dashboard components:
+- Total Spend (USD)
+- Total Shipments
+- Average Cost per Shipment
+- Monthly Spend Trend
+- Inbound vs Outbound comparison by GL location
+- Carrier performance breakdown
+- Ship mode distribution
+
+![Freight Dashboard](docs/powerbi_dashboard.png)
